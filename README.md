@@ -167,6 +167,7 @@ Descargar todos los archivos en la misma carpeta y ejecutar el archivo main.py (
 ## Next steps
 
 * Identificar **outliers** mediante el rango intercuartil (IQR).
+* Probar [selectKBest](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html#sklearn.feature_selection.SelectKBest) para feature selction en función de los K con mejoes scores.
 * Aplicar **GridSearchCV** para RandomForestRegressor, y sacar el modelo más óptimo en función del estimador qu le indiquemos.
 * ¿Conviene usar **RobustScaler** en lugar de los scalers que he usado?
 
