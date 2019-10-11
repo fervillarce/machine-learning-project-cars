@@ -7,14 +7,16 @@ El objetivo de este proyecto es predecir precios de coches de segunda mano.
 El proyecto es parte de una competición de [Kaggle](https://www.kaggle.com/c/datamad0819-vehicles/).
 
 
-## Input files
+## Files
+
+### Input files
 
 Son los archivos de train y test, descargados de Kaggle.
 * cars_train_csv
 * cars_test_csv
 
 
-## Output files
+### Output files
 
 Son los archivos resultantes de cada modelo, que hay que submitir en Kaggle.
 Cada archivos tiene dos columnas: el índice único del coche y la predicción del precio.
@@ -23,6 +25,22 @@ Cada archivos tiene dos columnas: el índice único del coche y la predicción d
 * cars_submission_dectree.csv
 * cars_submission_linreg.csv
 * cars_submission_randfor.csv
+
+
+### Source files
+
+Son los archivos necesarios para ejecutar el pipeline. Cada uno de los archivos contiene funciones en su mayoría documentadas.
+* **main.py**: ejecuta el pipeline.
+* **extractor.py**: contiene funciones para importar.
+* **explorer**: funciones para la exploración.
+* **cleaner.py**: funciones de limpieza (eliminación de columnas irrelevantes y eliminación/edición de nulls).
+* **transformer.py**: funciones de transformación de columnas.
+* **spliter.py**: contiene la función para dividir el train en dos: X, y.
+* **scaler.py**: funciones para rescalar.
+* **dim_reductor.py**: funciones para reducir la dimensionalidad.
+* **trainer.py**: algoritmos de entrenamiento y predicción.
+* **loader.py**: funciones para exportar, ya sea a un json o a un csv.
+* **main.ipynb**: lo he incluido por si se quiere probar con jupyter en lugar de con el .py.
 
 
 ## A few thoughts before we begin
@@ -34,7 +52,7 @@ Además, esta variable es numérica, por lo que tendremos que usar técnicas y m
 
 ## Pipeline description
 
-A continuación, se describen cada una de las funciones principales del pipeline, siguiendo una estructura ETL.
+A continuación, se describen cada una de las funciones principales del pipeline, siguiendo una estructura ETL. Estas funciones, a su vez, llaman a los archivos anteriormente descritos.
 
 
 ### Importación de los datasets (función *extract*)
@@ -110,23 +128,6 @@ Por último, prepara el archivo de submission (id, price) y exporta el dataframe
 ### Función principal (función *main*)
 
 La función main es la directora de orquesta. Va llamando a cada una de las funciones anteriores. 
-
-
-
-## Files description
-
-Además de los input files y los output files descritos anteriormente, el proyecto está compuesto de los siguientes archivos. Cada uno de los archivos contiene funciones en su mayoría documentadas.
-* **main.py**: ejecuta el pipeline.
-* **extractor.py**: contiene funciones para importar.
-* **explorer**: funciones para la exploración.
-* **cleaner.py**: funciones de limpieza (eliminación de columnas irrelevantes y eliminación/edición de nulls).
-* **transformer.py**: funciones de transformación de columnas.
-* **spliter.py**: contiene la función para dividir el train en dos: X, y.
-* **scaler.py**: funciones para rescalar.
-* **dim_reductor.py**: funciones para reducir la dimensionalidad.
-* **trainer.py**: algoritmos de entrenamiento y predicción.
-* **loader.py**: funciones para exportar, ya sea a un json o a un csv.
-* **main.ipynb**: lo he incluido por si se quiere probar con jupyter en lugar de con el .py.
 
 
 ## Conclusiones
